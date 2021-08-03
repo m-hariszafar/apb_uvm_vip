@@ -25,9 +25,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 module apb_v3_sram #(
                     // device parameters
                     parameter ADDR_BUS_WIDTH=4,        // Width of Address bus i.e. PADDR
-                    parameter DATA_BUS_WIDTH=4,        // Width of Data bus (i.e. PWDATA and PRDATA)
-                    parameter MEMSIZE=64,               // RAM memory Size
-                    parameter MEM_BLOCK_SIZE=8,         // RAM memory block size
+                    parameter DATA_BUS_WIDTH=16,        // Width of Data bus (i.e. PWDATA and PRDATA)
+                    parameter MEMSIZE=16,               // RAM memory Size
+                    parameter MEM_BLOCK_SIZE=16,         // RAM memory block size
                     parameter RESET_VAL=0,              // Default Reset value of DUT
                     parameter EN_WAIT_DELAY_FUNC=0,     // Enable Random Delay Assertion in read or write operation 
                     parameter MIN_RAND_WAIT_CYC=0,      // Minimum cycle delay for read and write operation
