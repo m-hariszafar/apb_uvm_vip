@@ -1,4 +1,4 @@
-class apb_sequences extends uvm_sequences#(apb_transaction);
+class apb_sequences extends uvm_sequence#(apb_transaction);
   `uvm_object_utils(apb_sequences)
 
   function new (string name = "apb_sequences");
@@ -7,8 +7,14 @@ class apb_sequences extends uvm_sequences#(apb_transaction);
 
   apb_transaction item;
 
+	logic [31:0] iteration;
+    logic [15:0] data;
+    logic [3:0] addr;
+
   virtual task body();
-    `uvm_do(item)
+	repeat(iteration) begin
+		`uvm_do(item);
+	end
   endtask
 
 endclass
