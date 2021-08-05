@@ -18,11 +18,11 @@ class apb_test extends uvm_test;
     super.run_phase (phase);
 
     phase.raise_objection (this);
-		/*for (int i=0; i<16; i++)
-			wr_data(i,i,i);
-		for (int i=0; i<16; i++)
-			rd_data(i,i);*/
-		rand_data(100);
+		/*for (int i=0; i<5; i++)
+			wr_data(128*i,i,1); //directed write-seq: wr_data,wr_addr,iteration
+		for (int i=0; i<5; i++)
+			rd_data(i,1);	*/	//directed read-seq: rd_addr,iteration
+		rand_data(1000);		//random seq: iteration
     phase.drop_objection (this);
 
   endtask

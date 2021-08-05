@@ -29,7 +29,6 @@ class apb_driver extends uvm_driver #(apb_transaction);
       `uvm_info(get_type_name(),$sformatf("Contents: %s",item.sprint()),UVM_LOW)
        drv_port.write(item);
        drive(item);
-//       drv_port.write(item);
       seq_item_port.item_done();
     end
   endtask

@@ -5,6 +5,7 @@
     `include "apb_rd_sequence.sv"
     `include "apb_sequencer.sv"
 	`include "apb_driver.sv"
+	`include "apb_coverage.sv"
 	`include "apb_monitor.sv"
 	`include "apb_agent.sv"
 	`include "apb_scoreboard.sv"
@@ -27,12 +28,6 @@ module apb_tb_top();
                     .PREADY(vif.pready),
                     .PSLVERR(vif.pslverr)
                     );
-
- /* initial begin 
-    vif.presetn <= 0;
-    #20 vif.presetn <=1;
-  end*/
-
 
   initial begin
     uvm_config_db #(virtual apb_interface)::set(null,"*","apb_vif",vif);

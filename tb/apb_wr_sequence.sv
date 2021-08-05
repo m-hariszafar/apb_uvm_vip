@@ -12,7 +12,6 @@ class apb_wr_sequence extends apb_sequences;
         	`uvm_do_with(item,{ item.pwrite == 1;
 								item.pwdata == local::data;
 								item.paddr == local::addr;})
-			
 		end
     endtask
 
